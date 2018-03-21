@@ -15,7 +15,4 @@ class DockingStation
   def view_bikes
     @bikearray
   end
-
-  def dock_bike
-  end
 end

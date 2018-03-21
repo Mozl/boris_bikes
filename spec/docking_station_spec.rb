@@ -24,7 +24,7 @@ end
 # end
 
 describe DockingStation do
-  it {should respond_to :dock_bike}
+  it {should respond_to :add_bike}
 end
 
 describe DockingStation do
@@ -34,7 +34,8 @@ describe DockingStation do
   Docking_Station.bikearray { should have(1).items }
 end
 
-describe Docking_Station do
-  it 'sees there is a Bike in bikearray'
-  expect(Docking_Station.bikearray[0]).to be_an_instance_of(Bike)
+describe Docking_Station do 
+  it 'acknowledges bike' do 
+    expect(subject.bikearray).to contain_exactly(Bike)
+  end 
 end
