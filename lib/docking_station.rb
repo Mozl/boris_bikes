@@ -1,20 +1,29 @@
 class DockingStation
-  attr_reader :bikearray
+  attr_reader :bikes
   def initialize
-    @bikearray = []
+    @bikes = []
   end
 
   def release_bike
-    if @bikearray.size == 0
+    if empty?
       raise
     end
   end
 
   def add_bike(bike)
-    if @bikearray.size == 1 
-      raise 
-    else 
-      @bikearray << bike
-    end 
+    if full?
+      raise
+    else
+      @bikes << bike
+    end
+  end
+  private
+
+  def empty?
+    @bikes.size == 0
+  end
+
+  def full?
+    @bikes.size == 20
   end
 end

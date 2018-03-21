@@ -25,14 +25,14 @@ end
 
 describe DockingStation do
   Docking_Station = DockingStation.new
-  Docking_Station.bikearray { should have(0).items }
+  Docking_Station.bikes { should have(0).items }
   Docking_Station.add_bike(Bike.new)
-  Docking_Station.bikearray { should have(1).items }
+  Docking_Station.bikes { should have(1).items }
 end
 
 describe Docking_Station do
   it 'acknowledges bike' do
-    expect(subject.bikearray).to contain_exactly(Bike)
+    expect(subject.bikes).to contain_exactly(Bike)
   end
 end
 
@@ -47,10 +47,10 @@ describe DockingStation do
   end
 end
 
-describe DockingStation do 
-  station = DockingStation.new 
-  station.add_bike(Bike.new)
-  it 'raises an error when adding bike to full dock' do 
+describe DockingStation do
+  station = DockingStation.new
+  20.times { station.add_bike(Bike.new) }
+  it 'raises an error when adding bike to full dock' do
     expect { station.add_bike(Bike.new) }.to raise_error
-  end 
-end 
+  end
+end
