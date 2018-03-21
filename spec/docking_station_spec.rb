@@ -5,11 +5,11 @@ describe DockingStation do
   it {should respond_to (:release_bike)}
 end
 
-describe DockingStation do
-  it "releases a bike" do
-     expect(subject.release_bike.class).to eq(Bike)
-  end
-end
+# describe DockingStation do
+#   it "releases a bike" do
+#      expect(subject.release_bike.class).to eq(Bike)
+#   end
+# end
 
 
 describe Bike do
@@ -18,10 +18,6 @@ describe Bike do
   end
 end
 
-# describe DockingStation do
-#   it 'makes docking possible'
-#   expect(subject).to include (Bike.new)
-# end
 
 describe DockingStation do
   it { should respond_to :add_bike }
@@ -34,8 +30,19 @@ describe DockingStation do
   Docking_Station.bikearray { should have(1).items }
 end
 
-describe Docking_Station do 
-  it 'acknowledges bike' do 
+describe Docking_Station do
+  it 'acknowledges bike' do
     expect(subject.bikearray).to contain_exactly(Bike)
-  end 
+  end
+end
+
+describe DockingStation do
+  station = DockingStation.new
+  it 'raises an error' do
+    expect { station.release_bike }.to raise_error(RangeError)
+  end
+  it 'does not raise an error when there is a bike' do
+    station.add_bike(Bike.new)
+    expect {station.release_bike}.to_not raise_error
+  end
 end
