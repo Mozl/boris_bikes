@@ -1,4 +1,5 @@
 class DockingStation
+  attr_reader :bikearray
   def initialize
     @bikearray = []
   end
@@ -8,9 +9,13 @@ class DockingStation
   end
 
   def add_bike(bike)
-    @bikearray = << bike
+    @bikearray << bike
   end
 
   def view_bikes
     @bikearray
   end
+
+  def dock_bike
+  end
+end
