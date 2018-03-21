@@ -6,11 +6,15 @@ class DockingStation
 
   def release_bike
     if @bikearray.size == 0
-      raise RangeError
+      raise
     end
   end
 
   def add_bike(bike)
-    @bikearray << bike
+    if @bikearray.size == 1 
+      raise 
+    else 
+      @bikearray << bike
+    end 
   end
 end

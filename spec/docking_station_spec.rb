@@ -39,10 +39,18 @@ end
 describe DockingStation do
   station = DockingStation.new
   it 'raises an error' do
-    expect { station.release_bike }.to raise_error(RangeError)
+    expect { station.release_bike }.to raise_error
   end
   it 'does not raise an error when there is a bike' do
     station.add_bike(Bike.new)
-    expect {station.release_bike}.to_not raise_error
+    expect { station.release_bike }.to_not raise_error
   end
 end
+
+describe DockingStation do 
+  station = DockingStation.new 
+  station.add_bike(Bike.new)
+  it 'raises an error when adding bike to full dock' do 
+    expect { station.add_bike(Bike.new) }.to raise_error
+  end 
+end 
