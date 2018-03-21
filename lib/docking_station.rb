@@ -11,8 +11,4 @@ class DockingStation
   def add_bike(bike)
     @bikearray << bike
   end
-
-  def view_bikes
-    @bikearray
-  end
 end

@@ -24,7 +24,7 @@ end
 # end
 
 describe DockingStation do
-  it {should respond_to :add_bike}
+  it { should respond_to :add_bike }
 end
 
 describe DockingStation do
