@@ -12,8 +12,8 @@ describe Bike do
 
   it 'Allows a bike to become broken' do
     bike1 = Bike.new
-    broken_bike = bike1.break!
-    expect (broken_bike@working == true)
+    bike1.break!
+    expect(bike1.working?).to eq false
   end
 
-end
+  end

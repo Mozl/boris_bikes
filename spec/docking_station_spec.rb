@@ -5,12 +5,12 @@ describe DockingStation do
 
   it {should respond_to (:release_bike)}
 
-  it { should respond_to :add_bike }
+  it { should respond_to :return_bike }
 
   it 'Feature Test: adds bike then checks it is in the station' do
     station = DockingStation.new
     bike1 = Bike.new
-    station.add_bike(bike1)
+    station.return_bike(bike1)
     expect(station.bikes).to contain_exactly(bike1)
   end
 
@@ -21,14 +21,14 @@ describe DockingStation do
 
   it 'Feature Test: does not raise an error when there is a bike in the station to release' do
     station = DockingStation.new
-    station.add_bike(Bike.new)
+    station.return_bike(Bike.new)
     expect { station.release_bike }.to_not raise_error
   end
 
   it 'Feature Test: raises an error when adding 21 bikes to a default size dock aka 20' do
     station = DockingStation.new
-    20.times { station.add_bike(Bike.new) }
-    expect { station.add_bike(Bike.new) }.to raise_error(RuntimeError, "dock is full")
+    20.times { station.return_bike(Bike.new) }
+    expect { station.return_bike(Bike.new) }.to raise_error(RuntimeError, "dock is full")
   end
 
   # it 'accepts capacity higher than 20 when specified by user' do

@@ -1,3 +1,5 @@
+require_relative 'bike'
+
 class DockingStation
   attr_reader :bikes
   attr_accessor :capacity
@@ -13,7 +15,7 @@ class DockingStation
     end
   end
 
-  def add_bike(bike)
+  def return_bike(bike)
     if full?
       raise "dock is full"
     else
@@ -31,3 +33,7 @@ class DockingStation
     @bikes.size == @capacity
   end
 end
+
+# bank = DockingStation.new
+# bank.add_bike(Bike.new)
+# puts bank
