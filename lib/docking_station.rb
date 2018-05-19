@@ -12,6 +12,8 @@ class DockingStation
   def release_bike()
     if empty?
       raise "no bikes available"
+    else
+      @bikes.pop
     end
   end
 
@@ -33,7 +35,3 @@ class DockingStation
     @bikes.size == @capacity
   end
 end
-
-# bank = DockingStation.new
-# bank.add_bike(Bike.new)
-# puts bank
