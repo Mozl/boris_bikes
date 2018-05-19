@@ -52,15 +52,15 @@ And when you try and take a bike from an empty dock you also get an error:
 
 ## Testing
 
-Testing is done with [RSpec](http://rspec.info/). To install it run in Terminal:
+Testing is done with [RSpec](http://rspec.info/). To install it run bundle in Terminal:
 
 ```
-gem install RSpec
+$ bundle
 ```
 If you are getting errors installing gems you may have to add the ruby directory to your PATH first:
 
 ```
-PATH="`ruby -e 'puts Gem.user_dir'`/bin:$PATH"
+$ PATH="`ruby -e 'puts Gem.user_dir'`/bin:$PATH"
 ```
 
 Then you can run the tests (located in spec folder):
